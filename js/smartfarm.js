@@ -37,9 +37,9 @@ onValue(ref(db, "state1"), (snapshot) => {
   const data = snapshot.val();
   console.log(data);
   if (data === true) {
-    document.getElementById("warnLed").innerText = "Đang bật";
-  } else {
     document.getElementById("warnLed").innerText = "Đang tắt";
+  } else {
+    document.getElementById("warnLed").innerText = "Đang bật";
   }
 });
 
@@ -47,9 +47,9 @@ onValue(ref(db, "state3"), (snapshot) => {
   const data = snapshot.val();
   console.log(data);
   if (data === true) {
-    document.getElementById("warnMaybom").innerText = "Đang bật";
-  } else {
     document.getElementById("warnMaybom").innerText = "Đang tắt";
+  } else {
+    document.getElementById("warnMaybom").innerText = "Đang bật";
   }
 });
 
