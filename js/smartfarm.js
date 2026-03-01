@@ -70,18 +70,19 @@ onValue(ref(db, "CBND"), (snapshot) => {
   const data = snapshot.val();
   const box2 = document.getElementsByClassName("box2")[0];
 
-  box2.innerHTML = "";
-  box2.innerHTML += `<h1 class="heading">Log hệ thống</h1>
+  box2.innerHTML = `
+  <h1 class="heading">Log hệ thống</h1>
   <button class="golive" id="live2">
     <img src="img/stream.png" alt="lỗi tải ảnh" />
   </button>
-  <h2>Ngày: <span id="ngayLog">--</span></h2>`;
+`;
 
-  Object.entries(data).forEach(([key]) => {
-    const dataNgay = data[key];
-
-    document.getElementById("ngayLog").innerText = key;
-
+  Object.entries(data).forEach(([ngay, dataNgay]) => {
+    let h2Ngay = document.createElement("h2");
+    h2Ngay.className = "day";
+    h2Ngay.justifyContent = "center";
+    h2Ngay.innerText = `Ngày: ${ngay}`;
+    box2.appendChild(h2Ngay);
     Object.entries(dataNgay).forEach(([time, val]) => {
       let h2 = document.createElement("h2");
       h2.innerText = `${time} || Nhiệt độ: ${val.nhietdo}°C || Độ ẩm: ${val.doam}%`;
