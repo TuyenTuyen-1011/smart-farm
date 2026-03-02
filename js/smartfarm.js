@@ -72,9 +72,6 @@ onValue(ref(db, "CBND"), (snapshot) => {
 
   box2.innerHTML = `
   <h1 class="heading">Log hệ thống</h1>
-  <button class="golive" id="live2">
-    <img src="img/stream.png" alt="lỗi tải ảnh" />
-  </button>
 `;
 
   Object.entries(data).forEach(([ngay, dataNgay]) => {
